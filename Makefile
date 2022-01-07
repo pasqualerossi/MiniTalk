@@ -1,19 +1,24 @@
+FLAGS = -Wall -Werror -Wextra
+CC = gcc
+
 SERVER = server
 CLIENT = client
 
-FLAGS = -Wall -Wextra -Werror
-CC = cc
+PRINTF = ft_printf
+FLAGS = -Wall -Wextra -Werror -I$(PRINTF)/headers -L$(PRINTF) -lftprintf
 
 all:
-	@${CC} ${FLAGS} server.c -o ${SERVER}
-	@${CC} ${FLAGS} client.c -o ${CLIENT}
-	@echo "Server and Client Have Been Complied Successfully"
+	@make -s -C $(PRINTF)
+	@gcc $(FLAGS) server.c -o $(SERVER)
+	@gcc $(FLAGS) client.c -o $(CLIENT)
+	@echo "Server And Client Are Ready!"
 
 clean:
-	@rm -f ${SERVER}
-	@rm -f ${CLIENT}
+	@make clean -s -C $(PRINTF)
+
+fclean: clean
+	@make fclean -s -C $(PRINTF)
+	@rm -f $(SERVER) $(CLIENT)
 	@echo "Server and Client Have Been Cleaned Successfully"
 
 re: fclean all
-
-.PHONY: all clean fclean re

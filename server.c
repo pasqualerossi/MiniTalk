@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:07:39 by prossi            #+#    #+#             */
-/*   Updated: 2022/01/04 18:07:20 by prossi           ###   ########.fr       */
+/*   Updated: 2022/01/07 12:50:04 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
+#include "ft_printf.h"
 
 typedef struct s_message
 {
@@ -32,9 +33,9 @@ void	bit_handler(int bit)
 	g_msg.i++;
 	if (g_msg.i == 7)
 	{
-		printf("%c", g_msg.c);
+		ft_printf("%c", g_msg.c);
 		if (!g_msg.c)
-			printf("\n");
+			ft_printf("\n");
 		g_msg.c = 0;
 		g_msg.i = 0;
 	}
@@ -42,8 +43,8 @@ void	bit_handler(int bit)
 
 int	main(void)
 {
-	printf("Welcome To The Server\n");
-	printf("Server PID: %d\n", getpid());
+	ft_printf("Welcome To The Pasquale's Server!\n");
+	ft_printf("My Server PID is: %d\n", getpid());
 	while (1)
 	{
 		signal(SIGUSR2, bit_handler);
