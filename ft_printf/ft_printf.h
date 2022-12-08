@@ -18,7 +18,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <signal.h>
 
 // Below is for Printf
 
@@ -30,9 +29,11 @@ void	ft_hexadecimal(unsigned int x, int *length, char x_or_x);
 void	ft_unsigned_int(unsigned int u, int *length);
 void	ft_pointer(size_t pointer, int *length);
 
-int		ft_printf(const char *string, ...);
+int	ft_printf(const char *string, ...);
 
 // Below is for MiniTalk
+
+# include <signal.h>
 
 typedef struct s_message
 {
