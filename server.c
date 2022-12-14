@@ -31,7 +31,7 @@ void	bit_handler(int bit)
 
 int	main(void)
 {
-	ft_printf("Welcome To The Pasquale's Server!\n");
+	ft_printf("Welcome To Pasquale's Server!\n");
 	ft_printf("My Server PID is: %d\n", getpid());
 	while (1)
 	{
