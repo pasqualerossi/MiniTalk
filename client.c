@@ -1,5 +1,5 @@
 #include "ft_printf/includes/ft_printf.h"
-
+#include <signal.h>
 void	send_bit(int pid, char *str, size_t len)
 {
 	int		shift;
