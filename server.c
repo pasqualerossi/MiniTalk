@@ -1,5 +1,5 @@
-#include "ft_printf/ft_printf.h"
-
+#include "ft_printf/includes/ft_printf.h"
+#include <signal.h>
 void	bit_handler(int bit)
 {
 	int	i;
